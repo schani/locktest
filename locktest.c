@@ -5,19 +5,37 @@
 #include <string.h>
 
 /*
- * single
+ * # Ivy Bridge
+ *
+ * ## single
  *
  * fat lock:                  2.52s
  * thin lock, no CAS on exit: 2.26s
  * thin lock, halfword exit:  3.08s
  * thin lock, CAS on exit:    4.23s
  *
- * nested
+ * ## nested
  *
  * fat lock:                  0.82s
  * thin lock, no CAS on exit: 1.27s
  * thin lock, halfword exit:  2.21s
  * thin lock, CAS on exit:    3.02s
+ *
+ * # Cortex-A9
+ *
+ * ## single
+ *
+ * fat lock:                  19.95s
+ * thin lock, no CAS on exit: 19.05s
+ * thin lock, halfword exit:  18.90s
+ * thin lock, CAS on exit:    30.35s
+ *
+ * ## nested
+ *
+ * fat lock:                  7.62s
+ * thin lock, no CAS on exit: 8.77s
+ * thin lock, halfword exit:  7.33s
+ * thin lock, CAS on exit:    14.26s
  */
 
 //#define FAT_LOCK
